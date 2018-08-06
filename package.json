@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-gpicker ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "load-script": "^1.0.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {
@@ -16,6 +18,14 @@
     "@vue/cli-service": "^3.0.0-rc.10",
     "vue-template-compiler": "^2.5.16"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "main": "./dist/vue-gpicker.common.js",
   "eslintConfig": {
     "root": true,
     "env": {
