@@ -78,9 +78,9 @@ You can override the default build function by passing your custom function whic
                 picker.build().setVisible(true);
             }"
         >
-            <span>Click</span>
-            <div className="google"></div>
-        </GooglePicker>
+        <span>Click</span>
+        <div className="google"></div>
+</VueGPicker>
 ```
 This example creates a picker which shows folders and you can select folders.
 
