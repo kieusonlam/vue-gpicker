@@ -7,6 +7,23 @@
     "build-bundle": "vue-cli-service build --target lib --name vue-gpicker ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieusonlam/vue-gpicker.git"
+  },
+  "keywords": [
+    "vue",
+    "google",
+    "files",
+    "picker",
+    "chooser"
+  ],
+  "author": "Lam Kieu <rainbow.lam25@gmail.com> (http://github.com/kieusonlam)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kieusonlam/vue-gpicker/issues"
+  },
+  "homepage": "https://github.com/kieusonlam/vue-gpicker",
   "dependencies": {
     "load-script": "^1.0.0",
     "vue": "^2.5.16"
