@@ -18,8 +18,9 @@ Usage
             :scope="['https://www.googleapis.com/auth/drive.readonly']"
             :onChange="(data) => console.log('on change:', data)"
             :multiselect="true"
-            :navHidden="true"
+            :navHidden="false"
             :authImmediate="false"
+            :upload="true"
             :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
             :viewId="'DOCS'">
    <MyCustomButton />
@@ -39,8 +40,9 @@ You can do so by using `onAuthenticate`:
             :onChange="(data) => console.log('on change:', data)"
             :onAuthenticate="(token) => console.log('oauth token:', token)"
             :multiselect="true"
-            :navHidden="true"
+            :navHidden="false"
             :authImmediate="false"
+            :upload="true"
             :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
             :viewId="'DOCS'">
    <MyCustomButton />
@@ -57,8 +59,9 @@ You can override the default build function by passing your custom function whic
             :scope="SCOPE"
             :onChange="(data) => console.log('on change:', data)"
             :multiselect="true"
-            :navHidden="true"
+            :navHidden="false"
             :authImmediate="false"
+            :upload="true"
             :viewId='FOLDERS'
             :createPicker="(google, oauthToken) => {
                 const googleViewId = google.picker.ViewId.FOLDERS;

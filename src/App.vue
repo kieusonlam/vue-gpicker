@@ -6,8 +6,9 @@
       :scope="['https://www.googleapis.com/auth/drive.readonly']"
       :onChange="data => console.log('on change:', data)"
       :multiselect="true"
-      :navHidden="true"
+      :navHidden="false"
       :authImmediate="false"
+      :upload="true"
       :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
       :viewId="'DOCS'">
       <button>VueGPicker</button>

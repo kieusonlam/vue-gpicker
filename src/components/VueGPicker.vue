@@ -54,6 +54,10 @@ export default {
       type: Boolean,
       default: false
     },
+    upload: {
+      type: Boolean,
+      default: false
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -114,21 +118,23 @@ export default {
     },
     defaultCreatePicker (oauthToken) {
 
-      this.onAuthenticate(oauthToken);
+      this.onAuthenticate(oauthToken)
 
       if(this.createPicker){
+        // eslint-disable-next-line
         return this.createPicker(google, oauthToken)
       }
 
-      const googleViewId = google.picker.ViewId[this.viewId];
-      const view = new window.google.picker.View(googleViewId);
+      // eslint-disable-next-line
+      const googleViewId = google.picker.ViewId[this.viewId]
+      const view = new window.google.picker.View(googleViewId)
 
       if (this.mimeTypes) {
         view.setMimeTypes(this.mimeTypes.join(','))
       }
 
       if (!view) {
-        throw new Error('Can\'t find view by viewId');
+        throw new Error('Can\'t find view by viewId')
       }
 
       const picker = new window.google.picker.PickerBuilder()
@@ -147,6 +153,11 @@ export default {
 
       if (this.multiselect) {
         picker.enableFeature(window.google.picker.Feature.MULTISELECT_ENABLED)
+      }
+
+      if (this.upload) {
+        // eslint-disable-next-line
+        picker.addView(new google.picker.DocsUploadView())
       }
 
       picker.build()
