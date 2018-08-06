@@ -121,12 +121,10 @@ export default {
       this.onAuthenticate(oauthToken)
 
       if(this.createPicker){
-        // eslint-disable-next-line
-        return this.createPicker(google, oauthToken)
+        return this.createPicker(window.google, oauthToken)
       }
 
-      // eslint-disable-next-line
-      const googleViewId = google.picker.ViewId[this.viewId]
+      const googleViewId = window.google.picker.ViewId[this.viewId]
       const view = new window.google.picker.View(googleViewId)
 
       if (this.mimeTypes) {
@@ -156,8 +154,7 @@ export default {
       }
 
       if (this.upload) {
-        // eslint-disable-next-line
-        picker.addView(new google.picker.DocsUploadView())
+        picker.addView(new window.google.picker.DocsUploadView())
       }
 
       picker.build()

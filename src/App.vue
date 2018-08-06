@@ -4,7 +4,7 @@
       :clientId="'1027461693281-5d7gmo87k26vm8h9jv28b5q1jl7d6au4.apps.googleusercontent.com'"
       :developerKey="'AIzaSyAcNwETZM1qWE4S_x0l-TgiV4EI-XXsTTo'"
       :scope="['https://www.googleapis.com/auth/drive.readonly']"
-      :onChange="data => console.log('on change:', data)"
+      :onChange="onChange"
       :multiselect="true"
       :navHidden="false"
       :authImmediate="false"
@@ -21,6 +21,11 @@ import VueGPicker from './components/VueGPicker.vue'
 
 export default {
   name: 'app',
+  methods: {
+    onChange (data) {
+      window.console.log('on change:', data)
+    }
+  },
   components: {
     VueGPicker
   }
