@@ -29,18 +29,6 @@ export default {
       default: 'DOCS' 
     },
     origin: String,
-    onChange: {
-      type: Function,
-      default: function () {
-        return {}
-      }
-    },
-    onAuthenticate: {
-      type: Function,
-      default: () => {
-        return {}
-      }
-    },
     createPicker: Function,
     authImmediate: {
       type: Boolean,
@@ -116,9 +104,28 @@ export default {
         this.doAuth(({ access_token }) => this.defaultCreatePicker(access_token))
       }
     },
+    pickerCallback (data) {
+      this.$emit('change', data)
+      switch (data.action) {
+        case 'loaded':
+          this.$emit('loaded')
+          break
+        case 'cancel':
+          this.$emit('cancel')
+          break
+        case 'picked':
+          this.$emit('picked', data.docs)
+          break
+        default: 
+          break
+      }
+    },
+    onAuthenticated (oauthToken) {
+      this.$emit('authenticated', oauthToken)
+    },
     defaultCreatePicker (oauthToken) {
 
-      this.onAuthenticate(oauthToken)
+      this.onAuthenticated(oauthToken)
 
       if(this.createPicker){
         return this.createPicker(window.google, oauthToken)
@@ -139,10 +146,10 @@ export default {
         .addView(view)
         .setOAuthToken(oauthToken)
         .setDeveloperKey(this.developerKey)
-        .setCallback(this.onChange);
+        .setCallback(this.pickerCallback)
 
       if (this.origin) {
-        picker.setOrigin(this.origin);
+        picker.setOrigin(this.origin)
       }
 
       if (this.navHidden) {
