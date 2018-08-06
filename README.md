@@ -14,14 +14,14 @@ Usage
 =====
 ```
 <VueGPicker :clientId="'your-client-id'"
-              :developerKey="'your-developer-key'"
-              :scope="['https://www.googleapis.com/auth/drive.readonly']"
-              :onChange="(data) => console.log('on change:', data)"
-              :multiselect="true"
-              :navHidden="true"
-              :authImmediate="false"
-              :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
-              :viewId="'DOCS'">
+            :developerKey="'your-developer-key'"
+            :scope="['https://www.googleapis.com/auth/drive.readonly']"
+            :onChange="(data) => console.log('on change:', data)"
+            :multiselect="true"
+            :navHidden="true"
+            :authImmediate="false"
+            :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
+            :viewId="'DOCS'">
    <MyCustomButton />
 </VueGPicker>
 ```
@@ -34,15 +34,15 @@ You can do so by using `onAuthenticate`:
 
 ```
 <VueGPicker :clientId="'your-client-id'"
-              :developerKey="'your-developer-key'"
-              :scope="['https://www.googleapis.com/auth/drive.readonly']"
-              :onChange="(data) => console.log('on change:', data)"
-              :onAuthenticate="(token) => console.log('oauth token:', token)"
-              :multiselect="true"
-              :navHidden="true"
-              :authImmediate="false"
-              :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
-              :viewId="'DOCS'">
+            :developerKey="'your-developer-key'"
+            :scope="['https://www.googleapis.com/auth/drive.readonly']"
+            :onChange="(data) => console.log('on change:', data)"
+            :onAuthenticate="(token) => console.log('oauth token:', token)"
+            :multiselect="true"
+            :navHidden="true"
+            :authImmediate="false"
+            :mimeTypes="['image/png', 'image/jpeg', 'image/jpg']"
+            :viewId="'DOCS'">
    <MyCustomButton />
 </VueGPicker>
 ```
@@ -53,14 +53,14 @@ You can override the default build function by passing your custom function whic
 - `access_token`: which you will need to pass to `setOAuthToken` method.
 ```
 <VueGPicker :clientId="CLIENT_ID"
-              :developerKey="DEVELOPER_KEY"
-              :scope="SCOPE"
-              :onChange="(data) => console.log('on change:', data)"
-              :multiselect="true"
-              :navHidden="true"
-              :authImmediate="false"
-              :viewId='FOLDERS'
-              :createPicker="(google, oauthToken) => {
+            :developerKey="DEVELOPER_KEY"
+            :scope="SCOPE"
+            :onChange="(data) => console.log('on change:', data)"
+            :multiselect="true"
+            :navHidden="true"
+            :authImmediate="false"
+            :viewId='FOLDERS'
+            :createPicker="(google, oauthToken) => {
                 const googleViewId = google.picker.ViewId.FOLDERS;
                 const docsView = new google.picker.DocsView(googleViewId)
                     .setIncludeFolders(true)
@@ -72,7 +72,7 @@ You can override the default build function by passing your custom function whic
                     .setOAuthToken(oauthToken)
                     .setDeveloperKey(DEVELOPER_KEY)
                     .setCallback(()=>{
-                      console.log('Custom picker is ready!');
+                        console.log('Custom picker is ready!');
                     });
 
                 picker.build().setVisible(true);
