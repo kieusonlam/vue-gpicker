@@ -92,7 +92,7 @@ Demo
 ====
 ```
 npm install
-npm start
+npm serve
 open http://localhost:8080
 ```
 
