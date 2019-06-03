@@ -26,13 +26,13 @@
   "homepage": "https://github.com/kieusonlam/vue-gpicker",
   "dependencies": {
     "load-script": "^1.0.0",
-    "vue": "^2.5.16"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
-    "@vue/cli-service": "^3.0.0-rc.10",
-    "vue-template-compiler": "^2.5.16"
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "files": [
     "dist/*",
