@@ -1,5 +1,7 @@
 Vue Google Picker
 ===================
+[![npm version](https://img.shields.io/npm/v/vue-gpicker.svg)](https://www.npmjs.com/package/vue-gpicker)
+
 Simple vue wrapper for [Google Picker API](https://developers.google.com/picker/docs/) 
 
 Based on [react-google-picker](https://github.com/sdoomz/react-google-picker)
