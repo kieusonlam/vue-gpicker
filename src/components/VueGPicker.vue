@@ -49,6 +49,9 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    mimeTypes: {
+      type: Array
     }
   },
   data: () => ({
